@@ -12,6 +12,7 @@ gem "jekyll", "~> 3.6.2"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"
+gem "jekyll-whiteglass"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -28,3 +29,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-04-29 20:27:31 -0400 by barriosj:
 gem "github-pages", "~> 179"
+
+# Added at 2018-04-29 21:07:40 -0400 by barriosj:
+gem "jekyll-theme-midnight", "~> 0.1.0"

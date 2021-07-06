@@ -23,5 +23,5 @@ jobs:
           poetry install
       - name: Build Site
         run: |
-          git fetch origin gh-pages
+          git fetch origin deploy
           nikola github_deploy

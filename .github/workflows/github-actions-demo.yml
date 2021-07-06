@@ -23,4 +23,4 @@ jobs:
           poetry install
       - name: Build Site
         run: |
-          nikola github deploy
+          nikola github_deploy

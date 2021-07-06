@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 
 ########################################
 # Configuration, please edit
+# https://getnikola.com/conf.html
 ########################################
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
@@ -43,6 +44,8 @@ PAGES = (
 
 )
 
+SHOW_SOURCELINK=False
+# show_source_link=False
 # What is the default language?
 
 DEFAULT_LANG = "en"
@@ -190,7 +193,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
 
         ('/blog/index.html', 'Blog'),
-
+        ('/my-first-page.html','Pages')
     ),
 }
 
@@ -201,7 +204,7 @@ CODE_COLOR_SCHEME = 'monokai'
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
 
-GZIP_FILES = True
+GZIP_FILES = False
 IMAGE_FOLDERS = {'images': 'images'}
 IMAGE_THUMBNAIL_SIZE = 400
 

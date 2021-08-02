@@ -7,46 +7,50 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://example.com/</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/2021/</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/blog/</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/blog/Leetcode-Problem-1909.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/blog/epi-97.html</loc>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/blog/my-notebook.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/blog/this-is-my-new-site.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/cat_test.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/problems.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/my-first-page.html</loc>
-  <lastmod>2021-07-06T20:49:00Z</lastmod>
+  <lastmod>2021-08-02T00:07:00Z</lastmod>
  </url>
 </urlset>

@@ -1,0 +1,10 @@
+.. title: my new page
+.. slug: my-new-page
+.. date: 2025-03-29 20:41:10 UTC
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+Write your page here.

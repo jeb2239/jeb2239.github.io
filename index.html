@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="Default Description">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>index | Hello world</title>
+<title>Hello world</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -13,14 +13,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
 <link rel="canonical" href="https://example.com/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><meta name="author" content="Jonathan Barrios">
-<meta property="og:site_name" content="Hello world">
-<meta property="og:title" content="index">
-<meta property="og:url" content="https://example.com/">
-<meta property="og:description" content="Hello!!!!!
-My name is Jonathan Elias Barrios, I am a graduate of Columbia University where I studied Computer Science and Operations Research. My primary interests are in in trading, financial technol">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2021-08-02T00:06:16Z">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="blog/Leetcode-Problem-1909.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -43,10 +36,16 @@ bg-dark
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item">
-<a href="blog/index.html" class="nav-link">Blog</a>
+<a href="archive.html" class="nav-link">Archives</a>
                 </li>
 <li class="nav-item">
-<a href="my-first-page.html" class="nav-link">Pages</a>
+<a href="categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="pages/index.html" class="nav-link">Pages</a>
+                </li>
+<li class="nav-item">
+<a href="rss.xml" class="nav-link">RSS feed</a>
 
                 
             </li>
@@ -60,16 +59,131 @@ bg-dark
     <div class="body-content">
         <!--Body content-->
         
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">index</a></h1>
-
         
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<h3>Hello!!!!!</h3>
-<p>My name is Jonathan Elias Barrios, I am a graduate of Columbia University where I studied Computer Science and Operations Research. My primary interests are in in trading, financial technology, and programming languages.</p>
+        
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/Leetcode-Problem-1909.html" class="u-url">Leetcode Problem 1909</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Jonathan Barrios
+            </span></p>
+            <p class="dateline">
+            <a href="blog/Leetcode-Problem-1909.html" rel="bookmark">
+            <time class="published dt-published" datetime="2021-07-03T18:47:07Z" itemprop="datePublished" title="2021-07-03 18:47">2021-07-03 18:47</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="blog/Leetcode-Problem-1909.html#disqus_thread" data-disqus-identifier="cache/posts/leetcode-1909.html">Comments</a>
+
+
+        </p>
 </div>
+    </header><div class="e-content entry-content">
+    <h3>Description</h3>
+<p>Given a 0-indexed integer array <code>nums</code>, return true if it can be made strictly increasing after removing exactly one element, or false otherwise. If the array is already strictly increasing, return true.</p>
+<p>The array <code>nums</code> is strictly increasing if <code>nums[i - 1] &lt; nums[i]</code> for each index <code>(1 &lt;= i &lt; nums.length)</code>.</p>
+<p>We need to see if it is possible to make the given array strictly increasing by removing no more than 1 number. 
+Removing one number means there is one violation in the strictly increasing array. So once we see this violation we
+just need to verify that after removing the violation we get a strictly increasing array.</p>
+<p>Lets consider an example:</p>
+<div class="code"><pre class="code literal-block">[1,2,10,5,7]
+</pre></div>
+
+<p>The violation here will be caught at index 3 when we compare 10 and 5. In this case we are better off dropping the 10 but how do we know this?
+Consider this example:</p>
+<div class="code"><pre class="code literal-block">[10,20,7]
+</pre></div>
+
+<p>Here we are better off dropping <code>i</code> instead of <code>i-1</code> in the previous example. We can avoid having to make this decision
+if we just test both cases, the array without <code>i</code> and the array without <code>i-1</code>. Here we will just check if either of the resulting
+arrays is strictly increasing and if it is we return <code>true</code> else <code>false</code>. </p>
+<div class="code"><pre class="code literal-block"><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">isStrictInc</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">){</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">prev</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">-1</span><span class="p">){</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">prev</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">prev</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">canBeIncreasing</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// find first violation in the array</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+<span class="w">                </span><span class="c1">// we have a problem</span>
+<span class="w">                </span><span class="c1">//remove either or</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">                </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isStrictInc</span><span class="p">(</span><span class="n">nums</span><span class="p">)){</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">;</span>
+<span class="w">                </span><span class="n">tmp</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+<span class="w">                </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isStrictInc</span><span class="p">(</span><span class="n">nums</span><span class="p">)){</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">;</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+<h3>Time complexity</h3>
+<p>$ O(n) $</p>
+<p>This is because we traverse the whole array no more than three times. Once to find the first violation and then twice to check the resulting array
+after we find the first violation and remove <code>i</code> and then if we remove <code>i-1</code>.</p>
+<h3>Space complexity</h3>
+<p>$ O(1) $</p>
+<p>It is constant because we modify our array by putting -1 in the place of the value we want to remove. Then we pass by reference to
+<code>isStrictInc</code> where we check if it is strictly increasing skipping over -1. Again once we see a violation we do this for <code>i</code> and <code>i-1</code>.</p>
     </div>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/this-is-my-new-site.html" class="u-url">This is my new site</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Jonathan Barrios
+            </span></p>
+            <p class="dateline">
+            <a href="blog/this-is-my-new-site.html" rel="bookmark">
+            <time class="published dt-published" datetime="2021-06-29T19:47:24Z" itemprop="datePublished" title="2021-06-29 19:47">2021-06-29 19:47</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="blog/this-is-my-new-site.html#disqus_thread" data-disqus-identifier="cache/posts/this-is-my-new-site.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>Write your post here.</p>
+<p>What is up my peeps.</p>
+    </div>
+    </article>
+</div>
+
+
+
+    
+       <script>var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -81,9 +195,10 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script></article><!--End of body content--><footer id="footer"></footer>
+</script><!--End of body content--><footer id="footer"></footer>
 </div>
 </div>
+
 
         <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {

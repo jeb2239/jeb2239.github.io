@@ -35,14 +35,13 @@ POSTS = (
     ("posts/*.html", "blog", "post.tmpl"),
     ("posts/*.ipynb","blog","post.tmpl")
 )
-
 PAGES = (
-    ("stories/*.txt", "", "story.tmpl"),
-    ("stories/*.rst", "", "story.tmpl"),
-    ("stories/*.html", "", "story.tmpl"),
-    ("stories/*.md", "", "story.tmpl")
-
+    ("pages/*.rst", "pages", "page.tmpl"),
+    ("pages/*.md", "pages", "page.tmpl"),
+    ("pages/*.txt", "pages", "page.tmpl"),
+    ("pages/*.html", "pages", "page.tmpl"),
 )
+
 
 SHOW_SOURCELINK=False
 # show_source_link=False
@@ -71,7 +70,7 @@ GITHUB_REMOTE_NAME = 'origin'
 # output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
 TAG_PATH = "categories"
 # Final location is output / TRANSLATION[lang] / INDEX_PATH / index-*.html
-INDEX_PATH = "blog"
+
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / archive.html
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -176,7 +175,6 @@ MathJax.Hub.Config({
 # Or a duckduckgo search: https://duckduckgo.com/search_box.html
 # This example should work for pretty much any site we generate.
 SEARCH_FORM = """ """
-ENGINE="jinja"
 # THEME_COLOR = "#f5ab14"
 THEME="custom"
 # Google analytics or whatever else you use. Added to the bottom of <body>
@@ -186,18 +184,23 @@ THEME="custom"
 # no addthis
 SOCIAL_BUTTONS_CODE = ''
 
-NAVIGATION_LINKS={
-    DEFAULT_LANG :((('/blog/index.html','BLOG')))
+NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+        ("/archive.html", "Archives"),
+        ("/categories/index.html", "Tags"),
+        ("/pages/index.html","Pages"),
+        ("/rss.xml", "RSS feed"),
+    ),
 }
 
 # Locale-dependent links for the sidebar
-NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
+# NAVIGATION_LINKS = {
+#     DEFAULT_LANG: (
 
-        ('/blog/index.html', 'Blog'),
-        ('/my-first-page.html','Pages')
-    ),
-}
+#         # ('/blog/index.html', 'Blog'),
+#         ('/pages/index.html','Pages')
+#     ),
+# }
 
 EXTRA_HEAD_DATA = ''
 

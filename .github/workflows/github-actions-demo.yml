@@ -16,7 +16,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry config virtualenvs.create false --local
-          poetry install
+          poetry install --no-root
       - name: Build Site
         run: |
           git fetch origin deploy
